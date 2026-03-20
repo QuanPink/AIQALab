@@ -80,3 +80,5 @@ Check against existing framework components:
 | Domain-specific framework references | Use generic placeholder names |
 | Analyzing without identifying test scope (UI/API/Both) | Always determine test type needed |
 | Ignoring integration points | List all API endpoints and UI screens involved |
+
+Save analysis output to `.claude/artifacts/requirement-analysis/latest.md`

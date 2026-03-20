@@ -448,3 +448,5 @@ When migrating data from an existing test:
 | JSON files without `_comment` field | Every JSON data file has purpose documentation |
 | Factory without default values | Factory always produces valid data with defaults |
 | Copy-pasting params across test methods | Shared via Factory or DataProvider |
+
+Save generation manifest to `.claude/artifacts/generated-test-data/latest.md`

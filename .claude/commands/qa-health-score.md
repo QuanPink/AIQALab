@@ -58,8 +58,9 @@ coverage_score = (api_coverage × 0.6) + (schema_coverage × 0.4)
 
 **Stability (20%):**
 ```
-flakiness_penalty = flaky_count / total × 100 × 10
-stability_score = max(0, 100 - flakiness_penalty)
+flakiness_rate = flaky_count / total × 100
+false_positive_rate = invalid_failures / total_failures × 100
+stability_score = max(0, 100 - (flakiness_rate × 10) - (false_positive_rate × 5))
 ```
 
 **Debt (15%):**

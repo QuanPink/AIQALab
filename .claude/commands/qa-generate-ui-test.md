@@ -305,3 +305,5 @@ mvn test -Dtestng.suite=testng-ui.xml -Denv=dev -Dtest=<ClassName>Test
 # Run single method
 mvn test -Denv=dev -Dtest=<ClassName>#<methodName>
 ```
+
+Save generation manifest (list of files created + test case summary) to `.claude/artifacts/generated-ui-test/latest.md`

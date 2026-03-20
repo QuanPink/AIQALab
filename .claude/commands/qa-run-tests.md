@@ -34,8 +34,8 @@ mvn test -Denv=dev -Dtest=<ClassName>#<methodName>
 # Override a specific entity ID used in the test
 mvn test -Denv=dev -Dtest=<ClassName> -Dtest.entity.id=<value>
 
-# Real example — provide a known txHash for position lookup tests
-mvn test -Denv=dev -Dtest=<ClassName> -Dtest.entity.key=0x<hash>
+# Real example — provide a known entity key for lookup tests
+mvn test -Denv=dev -Dtest=<ClassName> -Dtest.entity.key=<identifier-value>
 ```
 Properties prefixed with `test.` are read via `System.getProperty("test.<key>", "<fallback>")` in test classes.
 
@@ -144,3 +144,5 @@ Available suites in project root:
 | Ignoring skipped tests in summary | Report skip count and reasons |
 | Running on wrong environment without noticing | Always confirm env in summary output |
 | No next-step suggestion after failures | Always suggest /qa-analyze-failure |
+
+Save execution summary to `.claude/artifacts/run-tests/latest.md`

@@ -416,3 +416,5 @@ TEST_ENV=staging TEST_AUTH_TOKEN=xxx docker compose -f docker-compose.test.yml u
 | Single monolithic pipeline for all scenarios | Separate workflows by trigger and scope |
 | No notification on failure | Always notify team on failure |
 | No caching | Cache Maven dependencies for faster runs |
+
+Save generation manifest to `.claude/artifacts/generated-ci-config/latest.md`

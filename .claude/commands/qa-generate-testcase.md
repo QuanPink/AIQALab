@@ -152,3 +152,5 @@ Use generated scenarios for:
 | Using technical implementation details in scenario title | Business-driven titles only |
 | Skipping automation mapping | Every scenario must have should<Behavior> mapping |
 | Domain-specific data in scenarios | Use VALID_INPUT, KNOWN_ID patterns |
+
+Save generated test cases to `.claude/artifacts/testcase/latest.md`

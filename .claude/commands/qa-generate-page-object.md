@@ -170,6 +170,8 @@ Generate the following artifact(s):
 2. **List of public methods** — brief description of each method and what it returns
 3. **Navigation map** — describe which actions navigate to which Page Object
 
+Save generation manifest (Page Object file created + navigation map) to `.claude/artifacts/generated-page-object/latest.md`
+
 Example navigation map:
 ```
 LoginPage.login()         → DashboardPage

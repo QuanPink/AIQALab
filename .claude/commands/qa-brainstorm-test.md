@@ -89,3 +89,5 @@ Top 5 scenarios to automate first (P1/smoke):
 | Domain-specific examples in scenarios | Generic, reusable scenario descriptions |
 | Skipping automation feasibility assessment | Every scenario must be marked Auto/Manual/Partial |
 | Duplicating scenarios across groups | Each scenario appears in exactly one group |
+
+Save brainstorm output to `.claude/artifacts/brainstorm/latest.md`

@@ -68,3 +68,5 @@ List all test data needed:
 | Missing suite assignment | Every test must map to a testng suite |
 | No environment matrix | Specify which tests run on which env |
 | Skipping manual-only scenarios | Mark as enabled=false, still include in plan |
+
+Save test plan to `.claude/artifacts/test-plan/latest.md`

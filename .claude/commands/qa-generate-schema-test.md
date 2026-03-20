@@ -490,3 +490,5 @@ Generate the following artifacts:
 | Copy-pasting field names as raw strings in test | Use SchemaDefinition constants |
 | Skipping nested object validation | Recurse into nested objects and array items |
 | Schema test depends on specific entity data | Use `assumeThat` to skip when no data available |
+
+Save generation manifest to `.claude/artifacts/generated-schema-test/latest.md`

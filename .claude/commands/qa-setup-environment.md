@@ -309,3 +309,5 @@ docker run --rm qa-tests -Dtest.env=dev -Dsuite=testng-smoke.xml
 | Skipping environment validation before test run | Run EnvironmentValidator in CI/CD before test suite |
 | Different config loading patterns across tests | Single EnvConfig utility used everywhere |
 | Manual setup with no documentation | Automated validation + written guide |
+
+Save diagnostic report to `.claude/artifacts/setup-environment/latest.md`

@@ -314,3 +314,5 @@ public void should<Behavior>[When<Condition>]() {
 | Test calling ApiClient directly           | Test calls Service only           |
 
 All tests MUST be: clean, readable, and business-driven.
+
+Save generation manifest (list of files created + test case summary) to `.claude/artifacts/generated-api-test/latest.md`

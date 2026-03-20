@@ -298,4 +298,4 @@ If the file needs significant restructuring, provide:
 | Single-pass domain scan (only most visible terms) | Full 9-surface-area scan for every detected domain term |
 | Skipping architecture check if naming looks clean | Always verify Service Layer exists between test and ApiClient |
 
-Save compliance report to `.claude/artifacts/review-test/latest.md`
+Save compliance report to `.claude/artifacts/review-report/latest.md`

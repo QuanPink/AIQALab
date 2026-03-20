@@ -103,4 +103,3 @@ Save to `.claude/artifacts/skill-validation/latest.md`
 | Modifying command files during validation | Report only — never auto-fix |
 | Skipping cross-reference check | Always validate links between commands |
 | Ignoring ❌ BAD example columns in domain scan | Domain terms in BAD examples are acceptable |
-```

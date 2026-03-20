@@ -99,7 +99,21 @@ Commands in this framework can produce artifacts (output files) that other comma
 ├── failure-analysis/    ← output from /qa-analyze-failure
 ├── regression-analysis/ ← output from /qa-analyze-regression
 ├── impact-analysis/     ← output from /qa-impact-analysis
-└── reports/             ← output from /qa-generate-report
+├── reports/             ← output from /qa-generate-report
+├── fix-test/            ← output from /qa-fix-test
+├── fix-verify/          ← output from /qa-fix-and-verify
+├── skill-validation/    ← output from /qa-skill-validation
+├── health-score/        ← output from /qa-health-score
+├── docs-update/         ← output from /qa-update-docs
+├── requirement-analysis/ ← output from /qa-analyze-requirement
+├── generated-api-test/  ← output from /qa-generate-api-test
+├── generated-ui-test/   ← output from /qa-generate-ui-test
+├── generated-page-object/ ← output from /qa-generate-page-object
+├── generated-ci-config/ ← output from /qa-generate-ci-config
+├── generated-schema-test/ ← output from /qa-generate-schema-test
+├── generated-test-data/ ← output from /qa-generate-test-data
+├── setup-environment/   ← output from /qa-setup-environment
+└── run-tests/           ← output from /qa-run-tests
 ```
 
 ### Rules
@@ -108,6 +122,23 @@ Commands in this framework can produce artifacts (output files) that other comma
 2. **Read rule:** Before generating, check `.claude/artifacts/` for output from upstream commands. If found, use it as input automatically.
 3. **Naming:** Always overwrite `latest.md`. Keep previous runs as `<date>-<time>.md` if history is needed.
 4. **No dependency:** Artifacts are optional input. Every command MUST still work with `$ARGUMENTS` alone — artifacts are a convenience, not a requirement.
+
+---
+
+## Safety Warnings
+
+Commands that modify code or files MUST warn before destructive actions:
+
+| Action | Warning Required | Commands Affected |
+|--------|-----------------|-------------------|
+| Deleting test file | "This will permanently remove test coverage for [entity]. Confirm?" | qa-fix-test, qa-fix-and-verify |
+| Overwriting Service class | "Service class already exists. Overwrite will lose current implementation. Confirm?" | qa-generate-api-test |
+| Overwriting Page Object | "Page Object already exists. Overwrite will lose current locators. Confirm?" | qa-generate-page-object, qa-generate-ui-test |
+| Running tests on prod | "You are about to run tests on PRODUCTION environment. Confirm?" | qa-run-tests |
+| Clearing artifacts | "This will delete all artifacts in .claude/artifacts/. Confirm?" | manual action |
+| Regenerating test class | "Test class exists with [N] test methods. Regenerate will replace all. Confirm?" | qa-generate-api-test, qa-generate-ui-test |
+
+Commands that only READ or REPORT (`qa-review-test`, `qa-analyze-failure`, `qa-skill-validation`, `qa-health-score`) do NOT require warnings.
 
 ---
 
