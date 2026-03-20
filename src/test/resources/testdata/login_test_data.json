@@ -1,0 +1,37 @@
+{
+  "validCredentials": {
+    "email": "valid@example.com",
+    "password": "ValidPass@123",
+    "note": "Update with real test-account credentials via env var TEST_USERNAME / TEST_PASSWORD"
+  },
+  "invalidEmailFormats": [
+    { "email": "userWithoutAt",           "description": "missing @ symbol" },
+    { "email": "user@",                   "description": "no domain after @" },
+    { "email": "user@domain",             "description": "no TLD" },
+    { "email": "us er@domain.com",        "description": "space inside email" },
+    { "email": "@domain.com",             "description": "no local part" },
+    { "email": "user@@domain.com",        "description": "double @" },
+    { "email": "",                        "description": "empty string" },
+    { "email": "   ",                     "description": "whitespace only" }
+  ],
+  "securityPayloads": [
+    { "email": "<script>alert(1)</script>@x.com",  "type": "XSS",           "description": "script tag in email" },
+    { "email": "' OR '1'='1'@x.com",              "type": "SQLi",          "description": "SQL injection in email" },
+    { "email": "user@x.com",  "password": "' OR 1=1 --",   "type": "SQLi", "description": "SQL injection in password" },
+    { "email": "user@x.com",  "password": "<img src=x onerror=alert(1)>", "type": "XSS", "description": "XSS in password" }
+  ],
+  "boundaryValues": [
+    { "email": "a@b.co",                          "description": "minimum valid email (5 chars)" },
+    { "email": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@domain.com", "description": "300-char email (exceeds RFC limit)" },
+    { "password": "",                              "description": "empty password" },
+    { "password": "   ",                          "description": "whitespace-only password" },
+    { "password": "A",                            "description": "single character password" },
+    { "password": "Correct_but_WRONG_Case@123",   "description": "correct email, wrong case password" }
+  ],
+  "rateLimitConfig": {
+    "attemptCount": 5,
+    "wrongPassword": "DefnitelyWr0ng!",
+    "delayBetweenAttemptsMs": 1000,
+    "expectedLockoutAfterAttempts": 5
+  }
+}
